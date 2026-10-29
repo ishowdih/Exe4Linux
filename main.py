@@ -20,7 +20,7 @@ from pathlib import Path
 script_dir = str(Path.cwd())
 data_dir = script_dir + "/data/"
 exe_file =  "{exe4linux.exe_file}"
-os.system("wine {exe4linux.data_dir}/{exe4linux.exe_file}")"""
+os.system(f"wine {exe4linux.data_dir}/{exe4linux.exe_file}")"""
 
 def run():
     exe4linux.create_data()
