@@ -26,7 +26,7 @@ A Python tool that wraps Windows `.exe` files for Linux using Wine and PyInstall
 ## Installation
 
 ```bash
-git clone https://github.com/Eymorty/exe4linux.git
+git clone https://github.com/ishowdih/Exe4Linux.git "exe4linux"
 cd exe4linux
 pip install -r requirements.txt
 python3 main.py --exe program.exe
