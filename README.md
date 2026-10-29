@@ -3,7 +3,11 @@
 
 # Exe4Linux
 
-A Python tool that wraps Windows `.exe` files for Linux using Wine.
+A Python tool that wraps Windows `.exe` files for Linux using Wine and PyInstaller.
+
+<img width="891" height="619" alt="resim" src="https://github.com/user-attachments/assets/9ad69e32-be7d-4b2e-8b8d-41954792058d" />
+
+
 
 ## Features
 
@@ -54,13 +58,8 @@ python main.py --exe program.exe
 exe4linux/
 ├── main.py              # Main entry point
 ├── exe4linux.py         # Core logic
-├── data/                # Copied EXE file
-└── dist/                # Generated Linux executable
+|── requirements.txt     # Needed modules
 ```
-
-## Screenshot
-
-![alt text](image.png)
 
 ## Supported Distributions
 
