@@ -3,6 +3,7 @@ import os
 import shutil
 import sys
 import time
+import subprocess
 
 from colorama import Fore, Style, init
 from pathlib import Path
@@ -58,9 +59,11 @@ def install_wine():
     if ask.startswith("y"):
         distro = detect_distro()
         if distro == "arch":
-            os.system("sudo pacman -S --noconfirm wine")
+            command = "sudo pacman -S --noconfirm wine"
+            subprocess.run(command, shell=True, check=True)
         elif distro == "debian":
-            os.system("sudo apt update && sudo apt install -y wine")
+            command = "sudo apt update && sudo apt install -y wine"
+            subprocess.run(command, shell=True, check=True)
         else:
             print(f"Unsupported distro: {distro}. Install wine manually.")
             raise SystemExit(1)
@@ -77,7 +80,8 @@ def install_wine():
 def install_pyinstaller():
   ask = input("PyInstaller is not installed. This script needs PyInstaller to create Linux executable.\nWant to download it now? (Y/n) ").lower().strip()
   if ask.startswith("y"):
-    os.system("python -m pip install pyinstaller ")
+    command = "python -m pip install pyinstaller"
+    subprocess.run(command, shell=True, check=True)
   elif ask.startswith("n"):
     print("Okay, but you can't run this script without PyInstaller.")
     print("QUITTING!")
@@ -112,7 +116,7 @@ file_name = os.path.splitext(os.path.basename(exe_file))[0]
 startup_text = figlet_format("EXE4LINUX")
 colors = [Fore.RED, Fore.GREEN, Fore.LIGHTBLACK_EX, Fore.WHITE]
 msgs = messages
-os.system("clear")
+subprocess.run("clear", shell=True)
 print(startup_text)
 print("     V0.0.1 - Eymorty\n")
 msgs.info(f"Checking if {exe_file} really exists in the current directory...")
