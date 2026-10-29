@@ -1,7 +1,7 @@
 
 
 
-# EXE4LINUX
+# Exe4Linux
 
 A Python tool that wraps Windows `.exe` files for Linux using Wine.
 
