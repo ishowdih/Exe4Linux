@@ -37,7 +37,7 @@ def run():
         exe4linux.msgs.ok("Created placeholder.py to generate linux file")
     try:
         exe4linux.msgs.animate_info_dots("Creating Linux executable")
-        os.system(f"""cd {script_dir} && {executable} -m PyInstaller --onefile --name="{exe4linux.file_name}" --distpath="{dist_dir}" placeholder.py > /dev/null 2>&1""")
+        os.system(f"""cd {script_dir} && {executable} -m PyInstaller --onefile --name="{exe4linux.file_name}" --distpath="{dist_dir}" placeholder.py """)
         os.system(f"""cd {script_dir} && rm placeholder.py""")
         exe4linux.msgs.info(f"Created {exe4linux.file_name} at {dist_dir}")
     except Exception as e:
