@@ -84,7 +84,7 @@ def install_pyinstaller():
   elif ask.startswith("n"):
     print("Okay, but you can't run this script without PyInstaller.")
     print("QUITTING!")
-    raise SystemExit("Wine isn't installed.")
+    raise SystemExit("PyInstaller isn't installed.")
   else:
     print("answer with 'y' or 'n' only.")
     print("QUITTING!")
