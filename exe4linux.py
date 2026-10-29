@@ -8,8 +8,8 @@ from colorama import Fore, Style, init
 from pathlib import Path
 from pyfiglet import figlet_format
 from sys import platform
-init(autoreset=True)
 
+init(autoreset=True)
 class messages:
  def info(message):
     print(f"[{Fore.GREEN}INFO{Style.RESET_ALL}] {message}")
@@ -36,10 +36,7 @@ class messages:
        time.sleep(1)
     sys.stdout.write("\n")
 
-
-#define to check if the user is on windows
-def check_win():
- if platform == "win32":
+def handle_win():
   print("This is Linux only.")
   print("QUITTING!")
   raise SystemExit("You can't run this on Windows.")
@@ -55,7 +52,7 @@ parser.add_argument(
     help="Target EXE file",
     required=True
 )
-#define to install wine
+
 def install_wine():
     ask = input("Wine is not installed, this script needs wine to run .exe, want to download it now? (Y/n) ").lower().strip()
     if ask.startswith("y"):
@@ -107,7 +104,7 @@ def detect_distro():
         return "debian"
     return distro  
 
-#IMPORTANT, DONT DELETE!
+
 args = parser.parse_args()
 exe_file = args.exe
 exe_to_use_on_data = SCRIPT_DIR + "/" + exe_file
@@ -158,4 +155,3 @@ def create_data():
   os.makedirs("data", exist_ok=True)
   os.makedirs("dist", exist_ok=True)
   shutil.copy2(exe_to_use_on_data, data_dir)
-
