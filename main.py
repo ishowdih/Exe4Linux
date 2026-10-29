@@ -11,6 +11,9 @@ if not exe4linux.exe_file.lower().endswith(".exe"):
     print("QUITTING!")
     raise SystemExit(1)
 
+if sys.platform == "win32":
+    exe4linux.handle_win()
+
 script_dir = str(Path.cwd())
 dist_dir = script_dir + "/dist/"
 
